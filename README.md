@@ -4,6 +4,8 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 
 ## Patch List
 
+- viewontag : Goes to tag on window move to tag
+
 ## Requirements
 
 In order to build dwm you need the Xlib header files.
