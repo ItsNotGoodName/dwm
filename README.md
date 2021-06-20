@@ -4,8 +4,9 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 
 ## Patch List
 
-- viewontag : Goes to tag on window move to tag
+- actualfullscreen : Fullscreen via MOD+f
 - attachaside : New windows get put aside as first window instead of becoming master
+- viewontag : Goes to tag on window move to tag
 
 ## Requirements
 
