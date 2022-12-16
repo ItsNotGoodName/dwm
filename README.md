@@ -14,8 +14,15 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 In order to build dwm you need the Xlib header files.
 
 Debian/Ubuntu
+
 ```
 sudo apt install libxinerama-dev libxft-dev libx11-dev
+```
+
+Fedora
+
+```
+sudo dnf install libX11-devel libXft-devel libXinerama-devel
 ```
 
 ## Installation
