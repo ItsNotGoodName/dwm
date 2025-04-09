@@ -7,6 +7,7 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 - actualfullscreen : Fullscreen via MOD+f
 - alwayscenter : Floating windows are always centered
 - attachaside : New windows get put aside instead of becoming master
+- quitprompt: Quit prompt with MOD+SHIFT+q
 - viewontag : Go to tag when changing window's tag
 
 ## Requirements
