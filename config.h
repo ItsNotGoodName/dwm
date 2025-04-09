@@ -5,16 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-
-/* systray */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;        /* 0 means no systray */
 
 /* Gruvbox colors */
 static const char col_bg0[]       = "#3c3836";
@@ -24,13 +16,9 @@ static const char col_gray[]      = "#a89984";
 static const char col_white[]     = "#000000";
 
 static const char *colors[][3]      = {
-  /*               fg bg     border   */
+  /*               fg           bg       border   */
   [SchemeNorm] = { col_gray,    col_bg0, col_white },
   [SchemeSel]  = { col_orange,  col_bg1, col_orange  },
-};
-
-static const char *const autostart[] = {
-  NULL /* terminate */
 };
 
 /* tagging */
@@ -70,7 +58,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_bg0, "-nf", col_gray, "-sb", col_bg1, "-sf", col_orange, NULL };
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg0, "-nf", col_gray, "-sb", col_bg1, "-sf", col_orange, NULL };
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *webcmd[]  = { "firefox", NULL };
 static const char *filecmd[]  = { "pcmanfm", NULL };
